@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Notification -->
+    <div id="notification"
+        class="notification fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+        <span class="font-medium">Product added to cart!</span>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-indigo-600">Prime</a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden md:flex flex-1 max-w-xl mx-8">
+                    <div class="relative w-full">
+                        <input type="text" placeholder="Search for products, brands and more"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        <button
+                            class="absolute right-0 top-0 h-full px-4 bg-indigo-600 text-white rounded-r-lg hover:bg-indigo-700 transition-colors">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Menu -->
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition-colors hidden md:block">
+                        <i class="fas fa-user mr-1"></i> Account
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition-colors">
+                        <i class="fas fa-heart mr-1"></i> Wishlist
+                    </a>
+                    <div class="relative">
+                        <button id="cart-button" class="text-gray-700 hover:text-indigo-600 transition-colors">
+                            <i class="fas fa-shopping-cart mr-1"></i> Cart
+                            <span id="cart-count"
+                                class="cart-count absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Search -->
+            <div class="md:hidden pb-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search for products, brands and more"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                    <button class="absolute right-0 top-0 h-full px-4 bg-indigo-600 text-white rounded-r-lg">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+ <!-- Hero Section -->
+    <section class="hero-section text-white py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 hero-content">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-slideInLeft">Diwali Dhamaka – Up to 70% OFF</h1>
+                    <p class="text-xl mb-6 animate-slideInLeft" style="animation-delay: 0.2s">Discover amazing deals on top brands. Limited time offer!</p>
+                    <button class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg animate-slideInLeft" style="animation-delay: 0.4s">
+                        Shop Now
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="img-logo.jpg" alt="Hero Banner" class="rounded-lg hero-image animate-slideInRight">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- category section -->
+
+   <section class="py-12 bg-white ">
+    <div>
+        <h1  class="text-2xl font-bold mb-3 text-center">Categories</h1>
+        <div class="div-cate">
+        <div class="categories">
+        <div class="category-card" style="background-image: url('img2.webp');">
+            <div class="category-content">
+                <h3>Electronics</h3>
+                <a href="#" class="btn">Explore</a>
+            </div>
+        </div>
+        
+        <div class="category-card" style="background-image: url('img3.jpg');">
+            <div class="category-content">
+                <h3>Fashion</h3>
+                <a href="#" class="btn">Explore</a>
+            </div>
+        </div>
+        
+        <div class="category-card" style="background-image: url('img5.jpg');">
+            <div class="category-content">
+                <h3>Home & Kitchen</h3>
+                <a href="#" class="btn">Explore</a>
+            </div>
+        </div>
+
+        <div class="category-card" style="background-image: url('img5.jpg');">
+            <div class="category-content">
+                <h3>Home & Kitchen</h3>
+                <a href="#" class="btn">Explore</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+   </section>
+
+
+
+       <!-- Categories Section -->
+    <section style="margin-top: -50px;" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8 text-center">Latest</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="bg-gray-100 rounded-lg p-4 text-center hover:bg-indigo-50 transition-colors cursor-pointer">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Electronics</span>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-4 text-center hover:bg-indigo-50 transition-colors cursor-pointer">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-tshirt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Fashion</span>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-4 text-center hover:bg-indigo-50 transition-colors cursor-pointer">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-home text-indigo-600 text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Home</span>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-4 text-center hover:bg-indigo-50 transition-colors cursor-pointer">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-dumbbell text-indigo-600 text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Sports</span>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-4 text-center hover:bg-indigo-50 transition-colors cursor-pointer">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-book text-indigo-600 text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Books</span>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-4 text-center hover:bg-indigo-50 transition-colors cursor-pointer">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-car text-indigo-600 text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Automotive</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "Zircon Double Love Necklace",
+                price: 499,
+                originalPrice: 999,
+                rating: 4.7,
+                reviews: 128,
+                category: "jewellery",
+                image: "img-neck.PNG",
+                description: "Zircon Double Love Necklace With Rhinestones Ins Personalized Heart-shaped Necklace Clavicle Chain Jewelry For Women Valentine's Day.",
+                features: ["Unique design", "stylish and beautiful","Good material", "comfortable wear","A variety of colors", "any choice"]
+            }, 
+            {
+                id: 2,
+                name: "Smart Fitness Watch",
+                price: 2499,
+                originalPrice: 3999,
+                rating: 4.3,
+                reviews: 89,
+                category: "Electronics",
+                image: "img-smart-watch.PNG",
+                description: "prepare a list of platform which deleiver oder in india allover in low cost.",
+                features: ["Heart Rate Monitor", "GPS Tracking", "Water Resistant", "7-day Battery"]
+            },
+            {
+                id: 3,
+                name: "Men's Patterned Printed T-shirt, Summer Casual Short Sleeved T-shirt",
+                price: 1299,
+                originalPrice: 2099,
+                rating: 4.7,
+                reviews: 256,
+                category: "Fashion",
+                image: "img-t-shrit.PNG",
+                description: "Comfortable and sustainable organic cotton t-shirt available in multiple colors. Perfect for everyday wear.",
+                features: ["100% Organic Cotton", "Machine Washable", "Multiple Colors", "Eco-friendly"]
+            },
+            {
+                id: 4,
+                name: "Hydrogen Water Bottles Electric Hydrogen Rich Water Generator",
+                price: 2599,
+                originalPrice: 4999,
+                rating: 4.8,
+                reviews: 312,
+                category: "home",
+                image: "img-water-bottle.PNG",
+                description: "Keep your drinks hot or cold for hours with this durable stainless steel water bottle. Eco-friendly and BPA-free.",
+                features: ["Double Wall Insulation", "BPA-free", "Leak-proof", "Eco-friendly"]
+            },
+            {
+                id: 5,
+                name: "Professional Camera",
+                price: 2899,
+                originalPrice: 5799,
+                rating: 4.9,
+                reviews: 67,
+                category: "Electronics",
+                image: "img-camera.PNG",
+                description: "Capture stunning photos and videos with this professional-grade camera featuring 4K video and advanced autofocus.",
+                features: ["4K Video", "Advanced Autofocus", "Wi-Fi Connectivity", "Weather Sealed"]
+            },
+            {
+                id: 6,
+                name: "Yoga Mat Premium",
+                price: 2399,
+                originalPrice: 4199,
+                rating: 4.6,
+                reviews: 143,
+                category: "Sports",
+                image: "img-mat.PNG",
+                description: "Non-slip yoga mat with extra cushioning for comfort during your yoga practice. Eco-friendly materials.",
+                features: ["Non-slip Surface", "Extra Cushioning", "Eco-friendly", "Easy to Clean"]
+            },
+            {
+                id: 7,
+                name: "Dog Leash Retractable Leash",
+                price: 1900,
+                originalPrice: 2499,
+                rating: 4.4,
+                reviews: 89,
+                category: "kits",
+                image: "img-dog-kit.PNG",
+                description: "A captivating novel from a bestselling author. Perfect for book clubs and casual reading.",
+                features: ["Paperback", "500 Pages", "Bestseller", "Book Club Favorite"]
+            },
+            {
+                id: 8,
+                name: "Magnetic Suction Wireless Charging And Folding Phone Holder",
+                price: 1999,
+                originalPrice: 2349,
+                rating: 4.2,
+                reviews: 76,
+                category: "Electronics",
+                image: "img-wireless.PNG",
+                description: "Charge your compatible devices wirelessly with this fast charging pad. Sleek design with LED indicator.",
+                features: ["Fast Charging", "LED Indicator", "Sleek Design", "Universal Compatibility"]
+            },
+            {
+                id: 9,
+                name: "Running Shoes",
+                price: 3199,
+                originalPrice: 4599,
+                rating: 4.7,
+                reviews: 234,
+                category: "Sports",
+                image: "img-running-shoes.PNG",
+                description: "Lightweight running shoes with advanced cushioning technology for maximum comfort during your runs.",
+                features: ["Advanced Cushioning", "Breathable Material", "Durable Sole", "Multiple Sizes"]
+            },
+            {
+                id: 10,
+                name: "French Ceramic Retro Style Coffee Set",
+                price: 1799,
+                originalPrice: 2699,
+                rating: 4.5,
+                reviews: 98,
+                category: "Home",
+                image: "img-coffee-set.PNG",
+                description: "Set of 4 beautifully designed ceramic mugs perfect for your morning coffee or tea. Dishwasher safe.",
+                features: ["Set of 4", "Dishwasher Safe", "Elegant Design", "Comfortable Handle"]
+            },
+            {
+                id: 11,
+                name: "Bluetooth Speaker",
+                price: 1599,
+                originalPrice: 2399,
+                rating: 4.3,
+                reviews: 167,
+                category: "Electronics",
+                image: "img-bluetooth-speaker.PNG",
+                description: "Portable Bluetooth speaker with 360-degree sound and waterproof design. Perfect for outdoor activities.",
+                features: ["360-degree Sound", "Waterproof", "12-hour Battery", "Portable"]
+            },
+            {
+                id: 12,
+                name: "LED Spiral Table Lamp Modern Curved Desk Bedside Lamp Dimmable Warm White Night Light For Living Room And Bedroom",
+                price: 3499,
+                originalPrice: 5999,
+                rating: 4.6,
+                reviews: 112,
+                category: "Home",
+                image: "img-desk-lamp.PNG",
+                description: "Modern desk lamp with built-in wireless charger and adjustable brightness. Perfect for home office.",
+                features: ["Wireless Charger", "Adjustable Brightness", "Modern Design", "USB Port"]
+            }
+        ];
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = document.getElementById('cart-count');
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            updateCartCount();
+            setupScrollAnimations();
+            
+            // Close modal when clicking outside
+            document.getElementById('product-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeProductModal();
+                }
+            });
+        });
+
+        // Render products in different sections
+        function renderProducts() {
+            const featuredSection = document.querySelector('.bg-gray-50 .grid');
+            const trendingSection = document.querySelector('.bg-white .grid');
+            const recommendedSection = document.querySelector('.bg-gray-50:last-child .grid');
+            
+            // Clear existing content
+            featuredSection.innerHTML = '';
+            trendingSection.innerHTML = '';
+            recommendedSection.innerHTML = '';
+            
+            // Distribute products to sections
+            products.forEach((product, index) => {
+                const productCard = createProductCard(product);
+                
+                if (index < 4) {
+                    featuredSection.appendChild(productCard);
+                } else if (index < 8) {
+                    trendingSection.appendChild(productCard);
+                } else {
+                    recommendedSection.appendChild(productCard);
+                }
+            });
+        }
+
+        // Create product card HTML
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card bg-white rounded-lg shadow-md overflow-hidden cursor-pointer category-cardd';
+            card.setAttribute('data-id', product.id);
+            
+            const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+            
+            card.innerHTML = `
+                <div class="relative">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                    <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">${discount}% OFF</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1 truncate">${product.name}</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="flex text-yellow-400 mr-2">
+                            ${generateStarRating(product.rating)}
+                        </div>
+                        <span class="text-gray-600 text-sm">(${product.reviews})</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">₹${product.price.toFixed(2)}</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">₹${product.originalPrice.toFixed(2)}</span>
+                        </div>
+                        <button class="add-to-cart bg-indigo-600 text-white p-2 rounded-full hover:bg-indigo-700 transition-colors" data-id="${product.id}">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Add event listeners
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('.add-to-cart')) {
+                    openProductModal(product.id);
+                }
+            });
+            
+            card.querySelector('.add-to-cart').addEventListener('click', (e) => {
+                e.stopPropagation();
+                addToCart(product.id);
+            });
+            
+            return card;
+        }
+
+        // Generate star rating HTML
+        function generateStarRating(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            const emptyStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="far fa-star"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Open product modal
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const modal = document.getElementById('product-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+            
+            modalContent.innerHTML = `
+                <div class="p-6">
+                    <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                    
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/2">
+                            <img src="${product.image}" alt="${product.name}" class="w-full rounded-lg">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h2 class="text-2xl font-bold mb-2">${product.name}</h2>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400 mr-2">
+                                    ${generateStarRating(product.rating)}
+                                </div>
+                                <span class="text-gray-600">${product.rating} (${product.reviews} reviews)</span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <span class="text-3xl font-bold text-gray-900">$${product.price.toFixed(2)}</span>
+                                <span class="text-lg text-gray-500 line-through ml-2">$${product.originalPrice.toFixed(2)}</span>
+                                <span class="ml-2 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded">${discount}% OFF</span>
+                            </div>
+                            
+                            <p class="text-gray-700 mb-6">${product.description}</p>
+                            
+                            <div class="mb-6">
+                                <h3 class="font-semibold mb-2">Key Features:</h3>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center mb-6">
+                                <span class="mr-4 font-medium">Quantity:</span>
+                                <div class="flex items-center border border-gray-300 rounded">
+                                    <button class="decrease-quantity px-3 py-1 text-gray-600 hover:bg-gray-100">-</button>
+                                    <span class="quantity px-4 py-1">1</span>
+                                    <button class="increase-quantity px-3 py-1 text-gray-600 hover:bg-gray-100">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <button class="add-to-cart-modal flex-1 bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors" data-id="${product.id}">
+                                    <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                                </button>
+                                <button class="buy-now flex-1 bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add event listeners for modal
+            document.getElementById('close-modal').addEventListener('click', closeProductModal);
+            
+            const decreaseBtn = modalContent.querySelector('.decrease-quantity');
+            const increaseBtn = modalContent.querySelector('.increase-quantity');
+            const quantitySpan = modalContent.querySelector('.quantity');
+            
+            decreaseBtn.addEventListener('click', () => {
+                let quantity = parseInt(quantitySpan.textContent);
+                if (quantity > 1) {
+                    quantitySpan.textContent = quantity - 1;
+                }
+            });
+            
+            increaseBtn.addEventListener('click', () => {
+                let quantity = parseInt(quantitySpan.textContent);
+                quantitySpan.textContent = quantity + 1;
+            });
+            
+            modalContent.querySelector('.add-to-cart-modal').addEventListener('click', () => {
+                const quantity = parseInt(quantitySpan.textContent);
+                addToCart(product.id, quantity);
+                closeProductModal();
+            });
+            
+            // Show modal
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('modal-open');
+            }, 10);
+        }
+
+        // Close product modal
+        function closeProductModal() {
+            const modal = document.getElementById('product-modal');
+            modal.classList.remove('modal-open');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Add product to cart
+        function addToCart(productId, quantity = 1) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update UI
+            updateCartCount();
+            showNotification();
+        }
+
+        // Update cart count in navbar
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Add animation
+            cartCount.classList.add('pulse');
+            setTimeout(() => {
+                cartCount.classList.remove('pulse');
+            }, 500);
+        }
+
+        // Show notification
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Setup scroll animations
+        function setupScrollAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+    
+<script src="script.js"></script>
+</body>
+
+</html>
